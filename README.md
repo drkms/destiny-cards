@@ -23,3 +23,6 @@ First install python3 requirements :
 Add it into your nginx "sites-available" then, make a symbolic link, restart nginx, and dont forget to start python Flask API, using :
 
 ```python3 python/app.py```
+
+# Database
+You will find a database small version, just to have a complete test
