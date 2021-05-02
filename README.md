@@ -27,6 +27,9 @@ Add it into your nginx "sites-available" then, make a symbolic link, restart ngi
 # Database
 You will find a database small version, just to have a complete test
 
-You can install it with the command (login/pwd are just an example)
+You can install it with the command with defaut MySQL like this(login/pwd are just an example)
 
 ```mysql -uroot -p < db/init.sql```
+
+... or with default MariaDB settings, like this :
+```sudo mysql < db/init.sql```
