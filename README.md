@@ -32,4 +32,5 @@ You can install it with the command with defaut MySQL like this(login/pwd are ju
 ```mysql -uroot -p < db/init.sql```
 
 ... or with default MariaDB settings, like this :
+
 ```sudo mysql < db/init.sql```
