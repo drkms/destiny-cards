@@ -6,14 +6,6 @@ import os
 
 app = Flask(__name__)
 
-"""
-        'user': 'root',
-        'password': 'root',
-        'host': 'db',
-        'port': '3306',
-        'database': 'destiny_cards'
-"""
-
 def favorite_colors() -> List[Dict]:
     config = {
         'user': os.environ['MYSQL_USER'],
@@ -36,11 +28,12 @@ def favorite_colors() -> List[Dict]:
 def index() -> str:
     return json.dumps(favorite_colors())
 
-@app.after_request                                                                                              
-def after_request(response):                                                                                    
-    response.headers['Access-Control-Allow-Origin'] = "*"                                                       
-    response.headers['Access-Control-Allow-Methods'] = 'GET,POST'                                               
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'                             
+@app.after_request
+def after_request(response):
+    response.headers['Access-Control-Allow-Origin'] = "*"
+    response.headers['Access-Control-Allow-Methods'] = 'GET,POST'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+    
     return response 
 
 if __name__ == '__main__':
