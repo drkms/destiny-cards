@@ -15,7 +15,6 @@ $(document).ready(function(){
     $.ajax({
 	dataType: "json",
 	url: "test.json",
-	// url: "http://api.destinycards.local",
         context: document.body,
         success: function(data, status){
 	    console.log(data)
