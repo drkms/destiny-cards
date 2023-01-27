@@ -14,18 +14,11 @@ class Quote:
       }
     
   def get_quotes(self) -> List[Dict]:
-    # config = {
-    #     'user': ,
-    #     'password': os.environ['MYSQL_PWD'],
-    #     'host': os.environ['MYSQL_URL'],
-    #     'port': os.environ['MYSQL_PORT'],
-    #     'database': os.environ['MYSQL_DATABASE']
-    # }
     connection = mysql.connector.connect(**self.config)
     cursor = connection.cursor()
     cursor.execute('SELECT author, content FROM cards')
-    connection.close()
     results = cursor.fetchall()
+    connection.close()
     cursor.close()
     return results
   
